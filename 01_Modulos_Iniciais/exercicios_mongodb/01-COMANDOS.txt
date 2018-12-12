@@ -1,0 +1,92 @@
+DOCUMENTAÇÃO OFICIAL: https://docs.mongodb.com/
+
+*linha de comando
+
+*#linha de comando com algo de errado
+
+#erro
+
+MongoDb é um banco NÃO RELACIONAL(NOSQL) uma tecnologia baseada em documentos.
+Mais especificamente arquivos JSON.
+
+O banco é CAMELCASE ou CASE SENCITIVE
+
+*Iniciar banco: mongod
+
+*Abrir terminal do mongo: mongo
+
+*Mostrar bancos: show dbs
+
+*Usar banco: use db_finance
+obs: esse comando funciona mesmo sem o banco estar criado
+
+*Criar uma coleção: db.createCollection('teste')
+Se voce entrar em um banco não criado e criar uma coleção nele
+automaticamente o banco sera gerado
+
+*Mostra as coleções do banco: show collections
+
+*Deleta uma coleção: db.nomedacoleção.drop()
+Uma vez que todas as colections do banco forem deletadas o banco
+é apagado automaticamente
+
+*Incerir valor a uma coleção: bd.nomedacoleção.insert({nome:"batata",quantidade:10})
+Mesmo sem criar essa coleção, ao rodar este comando o mongo ira gerar a coleção
+e popular ela com os dados adicionados({JSON})
+
+*Atualizar ou Salvar um registro já existente: db.nomedacoleção.save({JSON})
+
+*Ver os valores de inceridos a uma coleção: db.nomedacoleção.find().pretty()
+
+*Ver apenas o primeiro valor de uma coleção: db.nomedacoleção.findOne()
+
+*Ver o primeiro elemento que cumprir as condições de um filtro: db.nomedacoleção.findOne({condição:10})
+
+*Ver elementos utilizando criterio OU: db.nomedacoleção.find({$or:[{condição1:10},{condição2:20}]}).pretty()
+
+*Ver elementos utilizando criterio AND: db.nomedacoleção.find({$and:[{condição1:10},{condição2:20}]}).pretty()
+
+*Ver se algum dado existe dentro de uma coleção: db.nomedacolação.find({condição:{$exists:true})
+
+*Pular numero de registros: db.nomedacoleção.find().skip(quantidade de registros que deseja pular)
+
+*Limitar a busca a um numero de registros: db.nomedacoleçao.find().limit(quantidade de registros que deseja pular)
+
+*Agregando informações necessarias e extraindo do documento:db.nomedacoleção.aggregate([{}]) $project info de cada linha, $group grupo de projetos
+Explicação maior AULA 184 Exercicio de agregação
+
+*Soma: $sum{}
+
+*Dar update no arquivo: db.nomedacoleção.update($set:{atributo:{valor:10}})
+$set é o operador que define qual sera a mudança
+AULA 185
+
+$Contar numero de entradas da coleção: db.nomedacolecao.count()
+
+$Remover: db.nomedacoleção.remove({filtro},numero de registros a serem apagados)
+
+$Exclir banco: db.dropDatabase()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
